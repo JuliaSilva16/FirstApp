@@ -11,7 +11,7 @@ def main(page: ft.Page):
     def somar(e):
         try:
             adicao = int(input_num1.value) + int(input_num2.value)
-            txt_resultado.value=  f'Resultadoi = {adicao}'
+            txt_resultado.value=  f'Resultado = {adicao}'
             page.update()
 
         except ValueError:
@@ -23,7 +23,7 @@ def main(page: ft.Page):
     def subtrair(e):
         try:
             subtracao = int(input_num1.value) - int(input_num2.value)
-            txt_resultado.value = f'Resultadoi = {subtracao}'
+            txt_resultado.value = f'Resultado = {subtracao}'
             page.update()
 
         except ValueError:
@@ -72,16 +72,16 @@ def main(page: ft.Page):
         on_click=subtrair
     )
 
-    btn_divisao = ft.FilledButton(
-        text="Divisão",
-        width=page.window.width,
-        on_click=dividir()
-    )
-
     btn_multiplicacao = ft.FilledButton(
         text="Multiplicação",
         width=page.window.width,
         on_click=multiplicar
+    )
+
+    btn_divisao = ft.FilledButton(
+        text="Divisão",
+        width=page.window.width,
+        on_click=dividir
     )
 
     txt_resultado = ft.Text(value="")
@@ -92,11 +92,11 @@ def main(page: ft.Page):
             [
                 input_num1,
                 input_num2,
+                txt_resultado,
                 btn_adicao,
                 btn_subtracao,
-                btn_divisao,
                 btn_multiplicacao,
-                txt_resultado,
+                btn_divisao,
             ]
 
         )

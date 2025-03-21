@@ -6,8 +6,8 @@ def main(page: ft.Page):
     page.title = "Minha aplicação Flet"
     page.theme_mode = ft.ThemeMode.LIGHT
                        # Ou ft.ThemeMode.DARK
-    page.window_width = 375
-    page.window_height = 667
+    page.window.width = 375
+    page.window.height = 667
 
     #Definição de funcões
     def exibir_nome(e):

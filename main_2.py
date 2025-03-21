@@ -1,5 +1,6 @@
 import flet as ft
 
+
 def main(page: ft.Page):
      # Configuração da página
      page.title = "Minha Aplicação Flet"
@@ -10,15 +11,15 @@ def main(page: ft.Page):
 
     #Definição de funções
      def exibir_numero_imparpar(e):
-         text_resultado.value = input_num.value
+         txt_resultado.value = input_num.value
          page.update()
      def impar_par(e):
          valor = input_num.value
          if int(valor) % 2 == 0:
-             text_resultado.value = "Par"
+             txt_resultado.value = "Par"
              page.update()
          else:
-             text_resultado.value = "Impar"
+             txt_resultado.value = "Impar"
              page.update()
 
 
@@ -29,14 +30,15 @@ def main(page: ft.Page):
          width=page.window.width,
          on_click=impar_par,
      )
-     text_resultado = ft.Text(value="")
+     txt_resultado = ft.Text(value="")
+
     #Construir o layout
      page.add(
           ft.Column(
                [
                     input_num,
                     btn_enviar,
-                    text_resultado,
+                    txt_resultado,
 
                ]
           )
